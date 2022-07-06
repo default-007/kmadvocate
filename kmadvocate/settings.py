@@ -245,3 +245,5 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-success",
     },
 }
+import django_heroku
+django_heroku.settings(locals())
