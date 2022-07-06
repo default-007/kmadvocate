@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static humanize %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Start main-content -->
+<div class="main-content-area">
+  <!-- Section: inner-header Start -->
+  <section class="page-title divider layer-overlay overlay-theme-colored2-9 section-typo-light bg-img-center"
+    data-tm-bg-img="{% static 'images/bg/bg1.jpg' %}">
+    <div class="container pt-90 pb-90">
+      <!-- Section Content -->
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="title text-white">Team Details</h2>
+            <nav role="navigation" class="breadcrumb-trail breadcrumbs">
+              <div class="breadcrumbs">
+                <span class="trail-item trail-begin">
+                  <a href="{% url 'website:home' %}"><span>Home</span></a>
+                </span>
+                <span><i class="fa fa-angle-right"></i></span>
+                <span class="trail-item"><a href="{% url 'website:team' %}"><span>Team</span></a></span>
+                <span><i class="fa fa-angle-right"></i></span>
+                <span class="trail-item trail-end text-theme-colored1">{{object.names}}</span>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: inner-header End -->
+
+  <!-- Section: Team Details -->
+  <section>
+    <div class="container pb-60">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="sidebar">
+              <div class="widget widget_text text-center">
+                <img src="{{object.imageURL}}" class="img-fullwidth" alt="{{object.names}}" />
+              </div>
+              <div class="widget widget_text text-center">
+                <div class="textwidget">
+                  <div class="section-typo-light bg-theme-colored1 mb-md-40 p-30 pt-40 pb-40"> <img
+                      class="size-full wp-image-800 aligncenter" src="{% static 'images/headphone-128.png' %}" alt=""
+                      width="128" height="128" />
+                    <h4>Contact us on</h4>
+                    <h5>+(123) 456-78-90</h5>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <h3 class="mt-0 mb-10">{{object.names}}</h3>
+            <p class="lead"><span class="text-theme-colored1 font-weight-600">{{object.position}}</span></p>
+            <p class="lead"><span class="text-theme-colored3 font-weight-600">Mail:</span>
+              <span class="text-theme-colored1 font-weight-600"> {{object.email}}</span>,</p>
+            <section>
+              {{object.formatted_markdown|safe }}
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Client & Partner -->
+  <section class="clients-section bg-theme-colored1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="tm-sc-clients owl-carousel owl-theme tm-owl-carousel-5col tm-clients-carousel">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Divider -->
+
+</div>
+<!-- end main-content -->
+{% endblock %}

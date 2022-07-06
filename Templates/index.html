@@ -1,1305 +1,557 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
+{% extends 'base.html' %}
+{% load static humanize %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Start main-content -->
+<div class="main-content-area">
 
-<head>
+  <!-- Section: home Start -->
+  <section id="home">
+    <div class="container-fluid p-0">
+      <div class="row">
+        <div class="col">
+          <!-- START Industrivo Rev Slider 2 REVOLUTION SLIDER 6.1.7 -->
+          <p class="rs-p-wp-fix"></p>
+          <rs-module-wrap id="rev_slider_1_1_wrapper" data-alias="industrivo-rev-slider-2" data-source="gallery"
+            style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+            <rs-module id="rev_slider_1_1" style="display:none;" data-version="6.1.7">
+              <rs-slides>
+                <rs-slide data-key="rs-9" data-title="Slide 1" data-thumb="images/bg/bg7.jpg"
+                  data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
+                  <img src="{% static 'images/bg/bg5.jpg' %}" title="slide1" width="1920" height="1280"
+                    data-parallax="off" class="rev-slidebg" data-no-retina>
+                  <rs-layer id="slider-4-slide-9-layer-18" data-type="text" data-rsp_ch="on"
+                    data-xy="x:l,l,l,c;xo:45px,45px,35px,0;yo:260px,203px,233px,212px;"
+                    data-text="w:normal;s:120,93,92,68;l:115,89,90,68;ls:1px,0px,0px,0px;fw:500;a:left,left,left,center;"
+                    data-frame_1="st:1000;sp:1000;sR:220;" data-frame_999="o:0;st:w;sR:7790;" style="z-index:9;"
+                    class="font-current-theme2">Legal iNSIGHT<br />
+                    Business Instinct
+                  </rs-layer>
+                  <rs-layer id="slider-4-slide-9-layer-21" data-type="text" data-rsp_ch="on"
+                    data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:218px,170px,195px,169px;"
+                    data-text="w:normal;s:22,22,21,20;l:25,19,23,22;ls:1px,0px,0px,0px;a:left,left,left,center;"
+                    data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
+                    style="z-index:10;font-style:italic;" class="font-current-theme1">Welcome to KM Advocates LLP
+                  </rs-layer>
+                  <rs-layer id="slider-4-slide-9-layer-22" data-type="text" data-rsp_ch="on"
+                    data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:540px,422px,448px,390px;"
+                    data-text="w:normal;s:20,15,18,20;l:25,19,18,22;a:left,left,left,center;"
+                    data-frame_1="st:1500;sp:1000;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:8;"><a
+                      href="{% url 'website:about' %}" class="btn btn-flat btn-lg btn-theme-colored1
+                      text-white">Discover
+                      More</a>
+                  </rs-layer>
+                  <rs-layer id="slider-4-slide-9-layer-33" data-type="shape" data-rsp_ch="on"
+                    data-text="w:normal;s:20,15,11,6;l:0,19,14,8;" data-dim="w:100%;h:100%;" data-basealign="slide"
+                    data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
+                    style="z-index:3;background-color:rgba(0,0,0,0.5);">
+                  </rs-layer>
+                </rs-slide>
+                <rs-slide data-key="rs-13" data-title="Slide 1" data-thumb="images/bg/bg6.jpg"
+                  data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
+                  <img src="{% static 'images/bg/bg6.jpg' %}" title="slide2" width="1920" height="1280"
+                    data-parallax="off" class="rev-slidebg" data-no-retina>
+                  <rs-layer id="slider-4-slide-13-layer-18" data-type="text" data-rsp_ch="on"
+                    data-xy="x:l,l,l,c;xo:45px,45px,35px,0;yo:260px,203px,233px,212px;"
+                    data-text="w:normal;s:120,93,92,68;l:115,89,90,68;ls:1px,0px,0px,0px;fw:500;a:left,left,left,center;"
+                    data-frame_1="st:1000;sp:1000;sR:220;" data-frame_999="o:0;st:w;sR:7790;" style="z-index:9;"
+                    class="font-current-theme2">Best Law Firm <br />
 
-  <!-- Meta Tags -->
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <meta name="description" content="kmadvocates - Law Firm " />
-  <meta name="keywords" content="advocate, attorneys, Lawyer, law firm" />
-  <meta name="author" content="ThemeMascot" />
-
-  <!-- Page Title -->
-  <title>KM ADVOCATES LLP - Law Firm</title>
-
-  <!-- Favicon and Touch Icons -->
-  <link href="images/favicon.png" rel="shortcut icon" type="image/png">
-  <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-  <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-  <link href="images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
-
-  <!-- Stylesheet -->
-  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="css/animate.min.css" rel="stylesheet" type="text/css">
-  <link href="css/javascript-plugins-bundle.css" rel="stylesheet" />
-
-  <!-- CSS | menuzord megamenu skins -->
-  <link href="js/menuzord/css/menuzord.css" rel="stylesheet" />
-
-  <!-- CSS | Main style file -->
-  <link href="css/style-main.css" rel="stylesheet" type="text/css">
-  <link id="menuzord-menu-skins" href="css/menuzord-skins/menuzord-rounded-boxed.css" rel="stylesheet" />
-
-  <!-- CSS | Responsive media queries -->
-  <link href="css/responsive.css" rel="stylesheet" type="text/css">
-  <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
-
-  <!-- CSS | Dark Layout -->
-  <link href="css/style-main-dark.css" rel="stylesheet" type="text/css">
-
-  <!-- CSS | Theme Color -->
-  <link href="css/colors/theme-skin-color-set1.css" rel="stylesheet" type="text/css">
-
-  <!-- external javascripts -->
-  <script src="js/jquery.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/javascript-plugins-bundle.js"></script>
-  <script src="js/menuzord/js/menuzord.js"></script>
-
-  <!-- REVOLUTION STYLE SHEETS -->
-  <link rel="stylesheet" type="text/css" href="js/revolution-slider/css/rs6.css">
-  <link rel="stylesheet" type="text/css" href="js/revolution-slider/extra-rev-slider1.css">
-  <!-- REVOLUTION LAYERS STYLES -->
-  <!-- REVOLUTION JS FILES -->
-  <script src="js/revolution-slider/js/revolution.tools.min.js"></script>
-  <script src="js/revolution-slider/js/rs6.min.js"></script>
-  <script src="js/revolution-slider/extra-rev-slider1.js"></script>
-
-  <!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
-
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
-
-<body class="tm-container-1300px has-side-panel side-panel-right dark-layout">
-  <div class="side-panel-body-overlay"></div>
-  <div id="side-panel-container" class="dark" data-tm-bg-img="images/widgets/side-push-bg.jpg">
-    <div class="side-panel-wrap">
-      <div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i
-            class="fa fa-times side-panel-trigger-icon"></i></a></div>
-      <img class="logo  mb-50" src="images/logo2.jpg" alt="Logo" width="80">
-      <p>Lorem ipsum is simply free text dolor sit am adipi we help you ensure everyone is in the right jobs sicing
-        elit, sed do consulting firms Et leggings across the nation tempor.</p>
-      <div class="widget">
-        <h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Latest News</h4>
-        <div class="latest-posts">
-          <article class="post clearfix pb-0 mb-10">
-            <a class="post-thumb" href="news-details.html"><img src="images/blog/s1.jpg" alt=""></a>
-            <div class="post-right">
-              <h5 class="post-title mt-0"><a href="news-details.html">Sustainable Construction</a></h5>
-              <p>Lorem ipsum dolor...</p>
-            </div>
-          </article>
-          <article class="post clearfix pb-0 mb-10">
-            <a class="post-thumb" href="news-details.html"><img src="images/blog/s2.jpg" alt=""></a>
-            <div class="post-right">
-              <h5 class="post-title mt-0"><a href="news-details.html">Industrial Coatings</a></h5>
-              <p>Lorem ipsum dolor...</p>
-            </div>
-          </article>
-          <article class="post clearfix pb-0 mb-10">
-            <a class="post-thumb" href="news-details.html"><img src="images/blog/s3.jpg" alt=""></a>
-            <div class="post-right">
-              <h5 class="post-title mt-0"><a href="news-details.html">Storefront Installations</a></h5>
-              <p>Lorem ipsum dolor...</p>
-            </div>
-          </article>
-        </div>
-      </div>
-      <div class="widget">
-        <h5 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Contact Info</h5>
-        <div class="tm-widget-contact-info contact-info-style1 contact-icon-theme-colored1">
-          <ul>
-            <li class="contact-name">
-              <div class="icon"><i class="flaticon-contact-037-address"></i></div>
-              <div class="text">John Doe</div>
-            </li>
-            <li class="contact-phone">
-              <div class="icon"><i class="flaticon-contact-042-phone-1"></i></div>
-              <div class="text"><a href="tel:+510-455-6735">+510-455-6735</a></div>
-            </li>
-            <li class="contact-email">
-              <div class="icon"><i class="flaticon-contact-043-email-1"></i></div>
-              <div class="text"><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></div>
-            </li>
-            <li class="contact-address">
-              <div class="icon"><i class="flaticon-contact-047-location"></i></div>
-              <div class="text">3982 Browning Lane Carolyns Circle, California</div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="wrapper" class="clearfix">
-    <!-- Header -->
-    <header id="header" class="header header-layout-type-header-2rows">
-      <div class="header-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-auto header-top-left align-self-center text-center text-xl-start">
-              <ul class="element contact-info">
-                <li class="contact-phone text-white"><i class="fa fa-phone font-icon sm-display-block"></i> Tel:
-                  +2547-000-0000</li>
-                <li class="contact-email text-white"><i class="fa fa-envelope font-icon sm-display-block"></i>
-                  info@example.com</li>
-                <li class="contact-address text-white"><i class="fa fa-map font-icon sm-display-block"></i> 121
-                  Street, City</li>
-              </ul>
-            </div>
-            <div class="col-xl-auto ms-xl-auto header-top-right align-self-center text-center text-xl-end">
-              <div class="element pt-0 pb-0">
-                <ul class="styled-icons icon-dark icon-theme-colored1 icon-circled clearfix">
-                  <li><a class="social-link" href="#"><i class="fab fa-facebook text-white"></i></a></li>
-                  <li><a class="social-link" href="#"><i class="fab fa-twitter text-white"></i></a></li>
-                  <li><a class="social-link" href="#"><i class="fab fa-youtube text-white"></i></a></li>
-                </ul>
-              </div>
-              <div class="element pt-0 pt-lg-10 pb-0">
-                <a href="ajax-load/form-appointment.html" class="btn btn-theme-colored2 btn-sm ajaxload-popup">
-                  Login</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="header-nav tm-enable-navbar-hide-on-scroll">
-        <div class="header-nav-wrapper navbar-scrolltofixed">
-          <div class="menuzord-container header-nav-container">
-            <div class="container position-relative">
-              <div class="row header-nav-col-row">
-                <div class="col-sm-auto align-self-center">
-                  <a class="menuzord-brand site-brand" href="index-mp-layout1.html">
-                    <img class="logo-default logo-1x" src="images/logo2.jpg" alt="Logo">
-                    <img class="logo-default logo-2x retina" src="images/logo2.jpg" alt="Logo">
-                  </a>
-                </div>
-                <div class="col-sm-auto ms-auto pr-0 align-self-center">
-                  <nav id="top-primary-nav" class="menuzord theme-color2" data-effect="slide" data-animation="none"
-                    data-align="right">
-                    <ul id="main-nav" class="menuzord-menu">
-                      <li class="active menu-item">
-                        <a href="#">Home</a>
-                        <div class="megamenu megamenu-fullwidth megamenu-position-left">
-
-                        </div>
-                      </li>
-                      <li class="menu-item">
-                        <a href="#">Practise Areas</a>
-                        <div class="megamenu megamenu-fullwidth megamenu-position-left">
-                          <div class="megamenu-row">
-
-                          </div>
-                        </div>
-                      </li>
-                      <li class="menu-item"><a href="#">Features</a>
-                        <ul class="dropdown">
-
-                        </ul>
-                      </li>
-                      <li class="menu-item"><a href="#">Resources</a>
-                        <ul class="dropdown">
-                        </ul>
-                      </li>
-                      <li class="menu-item"><a href="javascript:void(0)">News</a>
-
-                      </li>
-                      <li class="menu-item">
-                        <a href="javascript:void(0)">Contact</a>
-                        <div class="megamenu megamenu-fullwidth megamenu-position-left">
-
-                        </div>
-                      </li>
-
-                    </ul>
-                  </nav>
-                </div>
-                <div class="col-sm-auto align-self-center nav-side-icon-parent">
-                  <ul class="list-inline nav-side-icon-list">
-                    <li class="hidden-mobile-mode"><a href="#" id="top-nav-search-btn"><i
-                          class="search-icon fa fa-search"></i></a></li>
-
-                    <li class="hidden-mobile-mode">
-                      <div id="side-panel-trigger" class="side-panel-trigger">
-                        <a href="#">
-                          <div class="hamburger-box">
-                            <div class="hamburger-inner"></div>
-                          </div>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                  <div id="top-nav-search-form" class="clearfix">
-                    <form action="#" method="GET">
-                      <input type="text" name="s" value="" placeholder="Type and Press Enter..." autocomplete="off" />
-                    </form>
-                    <a href="#" id="close-search-btn"><i class="fa fa-times"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="row d-block d-xl-none">
-                <div class="col-12">
-                  <nav id="top-primary-nav-clone"
-                    class="menuzord d-block d-xl-none default menuzord-color-default menuzord-border-boxed menuzord-responsive"
-                    data-effect="slide" data-animation="none" data-align="right">
-                    <ul id="main-nav-clone" class="menuzord-menu menuzord-right menuzord-indented scrollable">
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Start main-content -->
-    <div class="main-content-area">
-
-      <!-- Section: home Start -->
-      <section id="home">
-        <div class="container-fluid p-0">
-          <div class="row">
-            <div class="col">
-              <!-- START Industrivo Rev Slider 2 REVOLUTION SLIDER 6.1.7 -->
-              <p class="rs-p-wp-fix"></p>
-              <rs-module-wrap id="rev_slider_1_1_wrapper" data-alias="industrivo-rev-slider-2" data-source="gallery"
-                style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-                <rs-module id="rev_slider_1_1" style="display:none;" data-version="6.1.7">
-                  <rs-slides>
-                    <rs-slide data-key="rs-9" data-title="Slide 1" data-thumb="images/bg/bg7.jpg"
-                      data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
-                      <img src="images/bg/bg5.jpg" title="slide1" width="1920" height="1280" data-parallax="off"
-                        class="rev-slidebg" data-no-retina>
-                      <rs-layer id="slider-4-slide-9-layer-18" data-type="text" data-rsp_ch="on"
-                        data-xy="x:l,l,l,c;xo:45px,45px,35px,0;yo:260px,203px,233px,212px;"
-                        data-text="w:normal;s:120,93,92,68;l:115,89,90,68;ls:1px,0px,0px,0px;fw:500;a:left,left,left,center;"
-                        data-frame_1="st:1000;sp:1000;sR:220;" data-frame_999="o:0;st:w;sR:7790;" style="z-index:9;"
-                        class="font-current-theme2">Legal iNSIGHT<br />
-                        Business Instinct
-                      </rs-layer>
-                      <rs-layer id="slider-4-slide-9-layer-21" data-type="text" data-rsp_ch="on"
-                        data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:218px,170px,195px,169px;"
-                        data-text="w:normal;s:22,22,21,20;l:25,19,23,22;ls:1px,0px,0px,0px;a:left,left,left,center;"
-                        data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
-                        style="z-index:10;font-style:italic;" class="font-current-theme1">Welcome to KM Advocates LLP
-                      </rs-layer>
-                      <rs-layer id="slider-4-slide-9-layer-22" data-type="text" data-rsp_ch="on"
-                        data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:540px,422px,448px,390px;"
-                        data-text="w:normal;s:20,15,18,20;l:25,19,18,22;a:left,left,left,center;"
-                        data-frame_1="st:1500;sp:1000;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:8;"><a
-                          href="page-about.html" class="btn btn-flat btn-lg btn-theme-colored1 text-white">Discover
-                          More</a>
-                      </rs-layer>
-                      <rs-layer id="slider-4-slide-9-layer-33" data-type="shape" data-rsp_ch="on"
-                        data-text="w:normal;s:20,15,11,6;l:0,19,14,8;" data-dim="w:100%;h:100%;" data-basealign="slide"
-                        data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
-                        style="z-index:3;background-color:rgba(0,0,0,0.5);">
-                      </rs-layer>
-                    </rs-slide>
-                    <rs-slide data-key="rs-13" data-title="Slide 1" data-thumb="images/bg/bg6.jpg"
-                      data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
-                      <img src="images/bg/bg6.jpg" title="slide2" width="1920" height="1280" data-parallax="off"
-                        class="rev-slidebg" data-no-retina>
-                      <rs-layer id="slider-4-slide-13-layer-18" data-type="text" data-rsp_ch="on"
-                        data-xy="x:l,l,l,c;xo:45px,45px,35px,0;yo:260px,203px,233px,212px;"
-                        data-text="w:normal;s:120,93,92,68;l:115,89,90,68;ls:1px,0px,0px,0px;fw:500;a:left,left,left,center;"
-                        data-frame_1="st:1000;sp:1000;sR:220;" data-frame_999="o:0;st:w;sR:7790;" style="z-index:9;"
-                        class="font-current-theme2">Best Law Firm <br />
-
-                      </rs-layer>
-                      <rs-layer id="slider-4-slide-13-layer-21" data-type="text" data-rsp_ch="on"
-                        data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:218px,170px,195px,169px;"
-                        data-text="w:normal;s:22,22,21,20;l:25,19,23,22;ls:1px,0px,0px,0px;a:left,left,left,center;"
-                        data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
-                        style="z-index:10;font-style:italic;" class="font-current-theme1">Welcome to KM Advocates LLP
-                      </rs-layer>
-                      <rs-layer id="slider-4-slide-13-layer-22" data-type="text" data-rsp_ch="on"
-                        data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:540px,422px,448px,390px;"
-                        data-text="w:normal;s:20,15,18,20;l:25,19,18,22;a:left,left,left,center;"
-                        data-frame_1="st:1500;sp:1000;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:8;"><a
-                          href="page-about.html" class="btn btn-flat btn-lg btn-theme-colored1 text-white">Discover
-                          More</a>
-                      </rs-layer>
-                      <rs-layer id="slider-4-slide-13-layer-33" data-type="shape" data-rsp_ch="on"
-                        data-text="w:normal;s:20,15,11,6;l:0,19,14,8;" data-dim="w:100%;h:100%;" data-basealign="slide"
-                        data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
-                        style="z-index:3;background-color:rgba(0,0,0,0.5);">
-                      </rs-layer>
-                    </rs-slide>
-                    <rs-slide data-key="rs-15" data-title="Slide 1" data-thumb="images/bg/bg1.jpg"
-                      data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
-                      <img src="images/bg/bg5.jpg" title="slide3" width="1920" height="1280" data-parallax="off"
-                        class="rev-slidebg" data-no-retina>
-                      <rs-layer id="slider-4-slide-15-layer-18" data-type="text" data-rsp_ch="on"
-                        data-xy="x:l,l,l,c;xo:45px,45px,35px,0;yo:260px,203px,233px,212px;"
-                        data-text="w:normal;s:120,93,92,48;l:115,89,90,60;ls:1px,0px,0px,0px;fw:500;a:left,left,left,center;"
-                        data-frame_1="st:1000;sp:1000;sR:220;" data-frame_999="o:0;st:w;sR:7790;" style="z-index:9;"
-                        class="font-current-theme2">Lib­er­ty and Jus­tice <br />
-                        for Everyone
-                      </rs-layer>
-                      <rs-layer id="slider-4-slide-15-layer-21" data-type="text" data-rsp_ch="on"
-                        data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:218px,170px,195px,169px;"
-                        data-text="w:normal;s:22,22,21,20;l:25,19,23,22;ls:1px,0px,0px,0px;a:left,left,left,center;"
-                        data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
-                        style="z-index:10;font-style:italic;" class="font-current-theme1">Welcome to KM Advocates LLP
-                      </rs-layer>
-                      <rs-layer id="slider-4-slide-15-layer-22" data-type="text" data-rsp_ch="on"
-                        data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:540px,422px,448px,390px;"
-                        data-text="w:normal;s:20,15,18,20;l:25,19,18,22;a:left,left,left,center;"
-                        data-frame_1="st:1500;sp:1000;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:8;"><a
-                          href="page-about.html" class="btn btn-flat btn-lg btn-theme-colored1 text-white">Discover
-                          More</a>
-                      </rs-layer>
-                      <rs-layer id="slider-4-slide-15-layer-33" data-type="shape" data-rsp_ch="on"
-                        data-text="w:normal;s:20,15,11,6;l:0,19,14,8;" data-dim="w:100%;h:100%;" data-basealign="slide"
-                        data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
-                        style="z-index:3;background-color:rgba(0,0,0,0.5);">
-                      </rs-layer>
-                    </rs-slide>
-                  </rs-slides>
-                  <rs-static-layers>
-                    <!--
+                  </rs-layer>
+                  <rs-layer id="slider-4-slide-13-layer-21" data-type="text" data-rsp_ch="on"
+                    data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:218px,170px,195px,169px;"
+                    data-text="w:normal;s:22,22,21,20;l:25,19,23,22;ls:1px,0px,0px,0px;a:left,left,left,center;"
+                    data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
+                    style="z-index:10;font-style:italic;" class="font-current-theme1">Welcome to KM Advocates LLP
+                  </rs-layer>
+                  <rs-layer id="slider-4-slide-13-layer-22" data-type="text" data-rsp_ch="on"
+                    data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:540px,422px,448px,390px;"
+                    data-text="w:normal;s:20,15,18,20;l:25,19,18,22;a:left,left,left,center;"
+                    data-frame_1="st:1500;sp:1000;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:8;"><a
+                      href="{% url 'website:about' %}"
+                      class="btn btn-flat btn-lg btn-theme-colored1 text-white">Discover
+                      More</a>
+                  </rs-layer>
+                  <rs-layer id="slider-4-slide-13-layer-33" data-type="shape" data-rsp_ch="on"
+                    data-text="w:normal;s:20,15,11,6;l:0,19,14,8;" data-dim="w:100%;h:100%;" data-basealign="slide"
+                    data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
+                    style="z-index:3;background-color:rgba(0,0,0,0.5);">
+                  </rs-layer>
+                </rs-slide>
+                <rs-slide data-key="rs-15" data-title="Slide 1" data-thumb="images/bg/bg1.jpg"
+                  data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
+                  <img src="{% static 'images/bg/bg5.jpg' %}" title="slide3" width="1920" height="1280"
+                    data-parallax="off" class="rev-slidebg" data-no-retina>
+                  <rs-layer id="slider-4-slide-15-layer-18" data-type="text" data-rsp_ch="on"
+                    data-xy="x:l,l,l,c;xo:45px,45px,35px,0;yo:260px,203px,233px,212px;"
+                    data-text="w:normal;s:120,93,92,48;l:115,89,90,60;ls:1px,0px,0px,0px;fw:500;a:left,left,left,center;"
+                    data-frame_1="st:1000;sp:1000;sR:220;" data-frame_999="o:0;st:w;sR:7790;" style="z-index:9;"
+                    class="font-current-theme2">Lib­er­ty and Jus­tice <br />
+                    for Everyone
+                  </rs-layer>
+                  <rs-layer id="slider-4-slide-15-layer-21" data-type="text" data-rsp_ch="on"
+                    data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:218px,170px,195px,169px;"
+                    data-text="w:normal;s:22,22,21,20;l:25,19,23,22;ls:1px,0px,0px,0px;a:left,left,left,center;"
+                    data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
+                    style="z-index:10;font-style:italic;" class="font-current-theme1">Welcome to KM Advocates LLP
+                  </rs-layer>
+                  <rs-layer id="slider-4-slide-15-layer-22" data-type="text" data-rsp_ch="on"
+                    data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:540px,422px,448px,390px;"
+                    data-text="w:normal;s:20,15,18,20;l:25,19,18,22;a:left,left,left,center;"
+                    data-frame_1="st:1500;sp:1000;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:8;"><a
+                      href="{% url 'website:about' %}"
+                      class="btn btn-flat btn-lg btn-theme-colored1 text-white">Discover
+                      More</a>
+                  </rs-layer>
+                  <rs-layer id="slider-4-slide-15-layer-33" data-type="shape" data-rsp_ch="on"
+                    data-text="w:normal;s:20,15,11,6;l:0,19,14,8;" data-dim="w:100%;h:100%;" data-basealign="slide"
+                    data-frame_1="st:500;sp:1000;" data-frame_999="o:0;st:w;sR:8000;"
+                    style="z-index:3;background-color:rgba(0,0,0,0.5);">
+                  </rs-layer>
+                </rs-slide>
+              </rs-slides>
+              <rs-static-layers>
+                <!--
                     -->
-                  </rs-static-layers>
-                  <rs-progress class="rs-bottom" style="height: 5px; background: rgba(199,199,199,0.5);"></rs-progress>
-                </rs-module>
-                <script>
-                  if (typeof revslider_showDoubleJqueryError === "undefined") {
-                    function revslider_showDoubleJqueryError(sliderID) {
-                      var err = "<div class='rs_error_message_box'>";
-                      err += "<div class='rs_error_message_oops'>Oops...</div>";
-                      err += "<div class='rs_error_message_content'>";
-                      err +=
-                        "You have some jquery.js library include that comes after the Slider Revolution files js inclusion.<br>";
-                      err +=
-                        "To fix this, you can:<br>&nbsp;&nbsp;&nbsp; 1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on";
-                      err += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jQuery.js inclusion and remove it";
-                      err += "</div>";
-                      err += "</div>";
-                      jQuery(sliderID).show().html(err);
-                    }
-                  }
-                </script>
-              </rs-module-wrap>
-              <!-- END REVOLUTION SLIDER -->
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Section: home End -->
-
-      <!-- Section: intro -->
-      <section>
-        <div class="container-fluid pt-0 pb-0">
-          <div class="section-content">
-            <div class="row">
-              <div class="col-sm-6 col-lg-6 col-xl-4 p-0 pl-lg-15 pr-lg-15">
-                <div class="tm-sc-jus-feature-box mb-30">
-                  <div
-                    class="tm-sc-icon-box icon-box icon-left iconbox-centered-in-responsive iconbox-theme-colored1 animate-icon-on-hover animate-icon-rotate-y pd-res-40 bg-dark">
-                    <div class="icon-box-wrapper">
-                      <div class="icon-wrapper"><a class="icon icon-type-font-icon icon-circled icon-dark mt-10"> <i
-                            class="flaticon-law-books"></i> </a></div>
-                      <div class="icon-text">
-                        <h5 class="aa-subtitle font-current-theme1 mt-0 mb-0 text-black-777"><span
-                            class="text-theme-colored1">|</span> Try Our Services</h5>
-                        <div class="content">
-                          <h4 class="">Experienced Criminal Advocates</h4>
-                        </div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-6 col-xl-4 p-0 pl-lg-15 pr-lg-15">
-                <div class="tm-sc-jus-feature-box mb-30">
-                  <div
-                    class="tm-sc-icon-box icon-box icon-left iconbox-centered-in-responsive iconbox-theme-colored1 animate-icon-on-hover animate-icon-rotate-y pd-res-40 bg-dark">
-                    <div class="icon-box-wrapper">
-                      <div class="icon-wrapper"><a class="icon icon-type-font-icon icon-circled icon-dark mt-10"> <i
-                            class="flaticon-law-judge-2"></i> </a></div>
-                      <div class="icon-text">
-                        <h5 class="aa-subtitle font-current-theme1 mt-0 mb-0 text-black-777"><span
-                            class="text-theme-colored1">|</span> Try Our Services</h5>
-                        <div class="content text-black-555">
-                          <h4 class="">Get a Best Advice from Law Experts</h4>
-                        </div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-6 col-xl-4 p-0 pl-lg-15 pr-lg-15">
-                <div class="tm-sc-jus-feature-box mb-30">
-                  <div
-                    class="tm-sc-icon-box icon-box icon-left iconbox-centered-in-responsive iconbox-theme-colored1 animate-icon-on-hover animate-icon-rotate-y pd-res-40 bg-dark">
-                    <div class="icon-box-wrapper">
-                      <div class="icon-wrapper"><a class="icon icon-type-font-icon icon-circled icon-dark mt-10"> <i
-                            class="flaticon-law-libra"></i> </a></div>
-                      <div class="icon-text">
-                        <h5 class="aa-subtitle font-current-theme1 mt-0 mb-0 text-black-777"><span
-                            class="text-theme-colored1">|</span> Try Our Services</h5>
-                        <div class="content">
-                          <h4 class="">We Protect Justice & Fight Injustice</h4>
-                        </div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Section: Our Service -->
-      <section class="our-service" data-tm-bg-img="images/bg/b4.jpg">
-        <div class="container pb-lg-20">
-          <div class="section-title">
-            <div class="row justify-content-md-center">
-              <div class="col-md-8">
-                <div class="text-center mb-100">
-                  <div class="tm-sc-section-title section-title">
-                    <div class="title-wrapper">
-                      <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Our
-                        Expertise</h5>
-                      <h2 class="text-white">Practice Areas</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section-content">
-            <div class="row">
-              <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="tm-icon-service-box">
-                  <div class="tm-details">
-                    <div class="icon"><i class="flaticon-law-criminal text-white"></i></div>
-                    <h4 class="title"><a href="page-practice-details.html">Criminal Law</a></h4>
-                    <p>Lorem ipsum is are simply free text many variations of pass of majority.</p>
-                    <a class="text-hover-theme-colored1" href="page-practice-details.html"><span
-                        class="fas fa-arrow-right"></span></a>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="tm-icon-service-box">
-                  <div class="tm-details">
-                    <div class="icon"><i class="flaticon-law-portfolio text-white"></i></div>
-                    <h4 class="title"><a href="page-practice-details.html">Business Law</a></h4>
-                    <p>Lorem ipsum is are simply free text many variations of pass of majority.</p>
-                    <a class="text-hover-theme-colored1" href="page-practice-details.html"><span
-                        class="fas fa-arrow-right"></span></a>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="tm-icon-service-box">
-                  <div class="tm-details">
-                    <div class="icon"><i class="flaticon-law-courthouse text-white"></i></div>
-                    <h4 class="title"><a href="page-practice-details.html">Real Estate Law</a></h4>
-                    <p>Lorem ipsum is are simply free text many variations of pass of majority.</p>
-                    <a class="text-hover-theme-colored1" href="page-practice-details.html"><span
-                        class="fas fa-arrow-right"></span></a>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="tm-icon-service-box">
-                  <div class="tm-details">
-                    <div class="icon"><i class="flaticon-law-judge-6 text-white"></i></div>
-                    <h4 class="title"><a href="page-practice-details.html">Education Law</a></h4>
-                    <p>Lorem ipsum is are simply free text many variations of pass of majority.</p>
-                    <a class="text-hover-theme-colored1" href="page-practice-details.html"><span
-                        class="fas fa-arrow-right"></span></a>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Section: About -->
-      <section class="">
-        <div class="container">
-          <div class="section-content">
-            <div class="row">
-              <div class="col-sm-12 col-lg-6 mb-md-30">
-                <img src="images/coming.jpg" alt="images">
-              </div>
-              <div class="col-sm-12 col-lg-6">
-                <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Get to Know
-                  Us</h5>
-                <h2>Welcome to KM Advocates LLP </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua lonm andhn. Aenean tincidunt id mauris id auctor. Donec at ligula lacus.
-                  Nulla dignissim mi quis neque interdum.</p>
-                <p class="title-call font-size-20">Call Us Anytime <br class="d-block d-sm-none"><a
-                    class="text-theme-colored1 font-size-30" href="tel:666-888-0000"><b>666-888-0000</b></a></p>
-                <a href="page-about.html" target="_self"
-                  class="btn btn-theme-colored1 btn-round btn-lg text-white">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tm-floating-objects d-none d-xl-block">
-          <span class="floating-object-1 tm-animation-floating" data-tm-z-index="-1"
-            data-tm-bg-img="images/floating-objects/ob1.png" data-tm-width="307" data-tm-height="250"
-            data-tm-top="60%"></span>
-          <span class="floating-object-2 tm-animation-flicker" data-tm-z-index="-1"
-            data-tm-bg-img="images/floating-objects/ob2.png" data-tm-width="680" data-tm-height="630" data-tm-top="10%"
-            data-tm-right="10%"></span>
-        </div>
-      </section>
-
-      <!-- Section: Analysis 
-      <section class="bg-lighter">
-        <div class="container">
-          <div class="section-title">
-            <div class="row justify-content-md-center">
-              <div class="col-md-8">
-                <div class="text-center mb-60">
-                  <div class="tm-sc-section-title section-title section-title-style1 text-center">
-                    <div class="title-wrapper">
-                      <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-300">| Our
-                        Expertise</h5>
-                      <h2 class="mt-0">Practice Areas</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section-content">
-            <div class="row">
-              <div class="col-md-6 col-lg-4">
-                <div
-                  class="tm-sc-icon-box justos-iconbox icon-box text-center iconbox-theme-colored1 iconbox-default-padding mb-30"
-                  data-tm-bg-img="images/practice-area/1.png">
-                  <div class="icon-box-wrapper bg-dark">
-                    <div class="icon-wrapper"> <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i
-                          class="fas fa-gavel"></i> </a></div>
-                    <div class="icon-text">
-                      <h4 class="icon-box-title mt-4 mb-3"><a href="page-practice-details.html">Family Law</a></h4>
-                      <div class="content">
-                        <p>Lorem ipsum is are many var-iations of pass of majority.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div
-                  class="tm-sc-icon-box justos-iconbox icon-box text-center iconbox-theme-colored1 iconbox-default-padding mb-30"
-                  data-tm-bg-img="images/practice-area/2.png">
-                  <div class="icon-box-wrapper bg-dark">
-                    <div class="icon-wrapper"> <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i
-                          class="fas fa-balance-scale"></i> </a></div>
-                    <div class="icon-text">
-                      <h4 class="icon-box-title mt-4 mb-3"><a href="page-practice-details.html">Business Law</a></h4>
-                      <div class="content">
-                        <p>Lorem ipsum is are many var-iations of pass of majority.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div
-                  class="tm-sc-icon-box justos-iconbox icon-box text-center iconbox-theme-colored1 iconbox-default-padding mb-30"
-                  data-tm-bg-img="images/practice-area/3.png">
-                  <div class="icon-box-wrapper bg-dark">
-                    <div class="icon-wrapper"> <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i
-                          class="fas fa-book-medical"></i> </a></div>
-                    <div class="icon-text">
-                      <h4 class="icon-box-title mt-4 mb-3"><a href="page-practice-details.html">Health Law</a></h4>
-                      <div class="content">
-                        <p>Lorem ipsum is are many var-iations of pass of majority.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div
-                  class="tm-sc-icon-box justos-iconbox icon-box text-center iconbox-theme-colored1 iconbox-default-padding mb-30"
-                  data-tm-bg-img="images/practice-area/4.png">
-                  <div class="icon-box-wrapper bg-dark">
-                    <div class="icon-wrapper"> <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i
-                          class="fas fa-car-crash"></i> </a></div>
-                    <div class="icon-text">
-                      <h4 class="icon-box-title mt-4 mb-3"><a href="page-practice-details.html">Accident Injuries</a>
-                      </h4>
-                      <div class="content">
-                        <p>Lorem ipsum is are many var-iations of pass of majority.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div
-                  class="tm-sc-icon-box justos-iconbox icon-box text-center iconbox-theme-colored1 iconbox-default-padding mb-30"
-                  data-tm-bg-img="images/practice-area/5.png">
-                  <div class="icon-box-wrapper bg-dark">
-                    <div class="icon-wrapper"> <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i
-                          class="fas fa-graduation-cap"></i> </a></div>
-                    <div class="icon-text">
-                      <h4 class="icon-box-title mt-4 mb-3"><a href="page-practice-details.html">Education Law</a></h4>
-                      <div class="content">
-                        <p>Lorem ipsum is are many var-iations of pass of majority.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div
-                  class="tm-sc-icon-box justos-iconbox icon-box text-center iconbox-theme-colored1 iconbox-default-padding mb-30"
-                  data-tm-bg-img="images/practice-area/6.png">
-                  <div class="icon-box-wrapper bg-dark">
-                    <div class="icon-wrapper"> <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i
-                          class="fas fa-university"></i> </a></div>
-                    <div class="icon-text">
-                      <h4 class="icon-box-title mt-4 mb-3"><a href="page-practice-details.html">Real Estate Law</a></h4>
-                      <div class="content">
-                        <p>Lorem ipsum is are many var-iations of pass of majority.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tm-floating-objects d-none d-xl-block">
-          <span class="floating-object-1 tm-animation-floating" data-tm-z-index="-1"
-            data-tm-bg-img="images/floating-objects/ob3.png" data-tm-width="287" data-tm-height="600"
-            data-tm-top="40%"></span>
-        </div>
-      </section>-->
-
-
-      <!-- Section: Our Faq 
-      <section class="our-faq">
-        <div class="container">
-          <div class="section-content">
-            <div class="row">
-              <div class="col-md-12 col-lg-6 col-xl-5 pr-0 pr-lg-20">
-                <div class="tm-sc-justos-funfact mb-md-50">
-                  <div class="tm-sc-funfact funfact funfact-lefticon mb-70 text-md-center text-lg-start">
-                    <div class="funfact-icon float-left mr-40 bg-theme-colored1"> <i
-                        class="flaticon-law-gavel text-white"></i></div>
-                    <div class="details">
-                      <h2 class="counter text-white mt-0"> <span class="animate-number" data-value="5493"
-                          data-animation-duration="1500">0</span></h2>
-                      <h5 class="aa-subtitle font-current-theme1 mt-0 mb-0 font-weight-300 text-black-999">Total Casses
-                        Won</h5>
-                    </div>
-                  </div>
-                  <hr class="mt-5">
-                  <div class="tm-sc-funfact funfact funfact-lefticon mb-70 mt-60 text-md-center text-lg-start">
-                    <div class="funfact-icon float-left mr-40 bg-theme-colored1"> <i
-                        class="flaticon-law-lawyer text-white"></i></div>
-                    <div class="details">
-                      <h2 class="counter text-white mt-0"> <span class="animate-number" data-value="3460"
-                          data-animation-duration="1500">0</span></h2>
-                      <h5 class="aa-subtitle font-current-theme1 mt-0 mb-0 font-weight-300 text-black-999">Satisfied
-                        Clients</h5>
-                    </div>
-                  </div>
-                  <hr class="mt-5">
-                  <div class="tm-sc-funfact funfact funfact-lefticon mt-60 text-md-center text-lg-start">
-                    <div class="funfact-icon float-left mr-40 bg-theme-colored1"> <i
-                        class="flaticon-law-trial text-white"></i></div>
-                    <div class="details">
-                      <h2 class="counter text-white mt-0"> <span class="animate-number" data-value="670"
-                          data-animation-duration="1500">0</span></h2>
-                      <h5 class="aa-subtitle font-current-theme1 mt-0 mb-0 font-weight-300 text-black-999">Award Wins
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 col-lg-6 col-xl-7">
-                <div class="tm-sc-about-area pl-120 pl-lg-20 pl-sm-0">
-                  <div class="entry-content">
-                    <div class="details">
-                      <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-300">|
-                        Frequently Asked Questions</h5>
-                      <h2 class="aa-title mt-0 mb-50 text-black">Have Any Question?</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="tm-sc-justos-accordion pl-120 pl-lg-20 pl-sm-0">
-                  <div class="accordion tm-accordion accordion-classic accordion-theme-colored1" id="accordion500">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="heading501">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#collapse501" aria-expanded="true" aria-controls="collapse501">
-                          <strong>Where do I find my Office product key?</strong>
-                        </button>
-                      </h2>
-                      <div id="collapse501" class="accordion-collapse collapse show" aria-labelledby="heading501"
-                        data-bs-parent="#accordion500">
-                        <div class="accordion-body">
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                          squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                          nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="heading502">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#collapse502" aria-expanded="false" aria-controls="collapse502">
-                          <strong>I am having trouble, what else should I do?</strong>
-                        </button>
-                      </h2>
-                      <div id="collapse502" class="accordion-collapse collapse" aria-labelledby="heading502"
-                        data-bs-parent="#accordion500">
-                        <div class="accordion-body">
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                          squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                          nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="heading503">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#collapse503" aria-expanded="false" aria-controls="collapse503">
-                          <strong>I need more information about Theme.</strong>
-                        </button>
-                      </h2>
-                      <div id="collapse503" class="accordion-collapse collapse" aria-labelledby="heading503"
-                        data-bs-parent="#accordion500">
-                        <div class="accordion-body">
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                          squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                          nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>-->
-
-      <!-- Section: Testimonials
-      <section class="our-testimonials">
-        <div class="container style2">
-          <div class="section-title">
-            <div class="row justify-content-md-center">
-              <div class="col-md-8">
-                <div class="text-center mb-60">
-                  <div class="tm-sc-section-title section-title">
-                    <div class="title-wrapper">
-                      <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Client
-                        Testimonials</h5>
-                      <h2 class="mt-0">What They Are Saying</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section-content">
-            <div class="row">
-              <div class="col-sm-6 col-md-6 col-lg-4">
-                <div class="testimonial-item tm_justos bg-dark mb-30">
-                  <div class="author-text"> I was very impresed by the kologi service lorem ipsum is simply free text
-                    used by copytyping refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                  <div class="author-info clearfix">
-                    <h4 class="name">Mike Hardsone</h4>
-                    <span class="job-position text-theme-colored1">Client Feedback</span>
-                  </div>
-                  <div class="author-thumb">
-                    <img class="rounded-circle" src="images/testimonials/s1.jpg" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-6 col-lg-4">
-                <div class="testimonial-item tm_justos bg-dark mb-30">
-                  <div class="author-text"> I was very impresed by the kologi service lorem ipsum is simply free text
-                    used by copytyping refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                  <div class="author-info clearfix">
-                    <h4 class="name">Selina Doe</h4>
-                    <span class="job-position text-theme-colored1">Client Feedback</span>
-                  </div>
-                  <div class="author-thumb">
-                    <img class="rounded-circle" src="images/testimonials/s2.jpg" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-6 col-lg-4">
-                <div class="testimonial-item tm_justos bg-dark mb-30">
-                  <div class="author-text">I was very impresed by the kologi service lorem ipsum is simply free text
-                    used by copytyping refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                  <div class="author-info clearfix">
-                    <h4 class="name">Kevin Martin</h4>
-                    <span class="job-position text-theme-colored1">Client Feedback</span>
-                  </div>
-                  <div class="author-thumb">
-                    <img class="rounded-circle" src="images/testimonials/s3.jpg" alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- Section: Client & Partner -->
-      <section class="clients-section bg-theme-colored1">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Divider -->
-      <!-- Section: Case Status -->
-      <section class="bg-img-cover" data-tm-bg-img="images/bg/b3.jpg">
-        <div class="container">
-          <div class="section-title">
-            <div class="row">
-              <div class="col-lg-5">
-                <div class="mb-60">
-                  <div class="tm-sc-section-title section-title">
-                    <div class="title-wrapper">
-                      <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Case
-                        Solved
-                      </h5>
-                      <h2 class="text-white mt-0">Why You Need The Top Lawyers</h2>
-                      <div class="tm-case-solved mt-30 mb-50">
-                        <div class="tm-sc-unordered-list list-default">
-                          <ul>
-                            <li>The Best Lawyer Firm in Your City</li>
-                            <li>100 Years Family History</li>
-                            <li>Excellent Operational Model</li>
-                            <li>Skilled Attorneys with Experienced</li>
-                          </ul>
-                        </div>
-                      </div>
-                      <a href="page-about.html" target="_self" class="btn btn-theme-colored1 btn-lg btn-round">Learn
-                        More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-7">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="tm-case-solved mb-60">
-                      <div class="thumb">
-                        <img class="img" src="images/coming.jpg" width="300" height="100" alt="">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="tm-case-solved border_right2">
-                      <div
-                        class="tm-sc-icon-box icon-box icon-left text-left iconbox-centered-in-responsive animate-icon-on-hover animate-icon-rotate-y mb-sm-30">
-                        <div class="icon-box-wrapper">
-                          <div class="icon-wrapper"> <a class="icon icon-default text-theme-colored1"> <i
-                                class="fas fa-balance-scale font-size-64"></i> </a></div>
-                          <div class="icon-text">
-                            <h5 class="icon-box-title text-white">Serving 20 Years</h5>
-                          </div>
-                          <div class="content mt-10 pr-30">
-                            <p>Lorem ipsum dolor sit a consetetur simple is pscing elitr sed m nonmy eirmod simply free
-                              text.
-                            </p>
-                          </div>
-                          <div class="clearfix"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="tm-case-solved">
-                      <div
-                        class="tm-sc-icon-box icon-box icon-left text-left iconbox-centered-in-responsive animate-icon-on-hover animate-icon-rotate-y mb-sm-30">
-                        <div class="icon-box-wrapper">
-                          <div class="icon-wrapper"> <a class="icon icon-default text-theme-colored1"> <i
-                                class="fas fa-university font-size-64"></i> </a></div>
-                          <div class="icon-text">
-                            <h5 class="icon-box-title text-white">The Largest Law Firm</h5>
-                          </div>
-                          <div class="content mt-10 pr-30">
-                            <p>Lorem ipsum dolor sit a consetetur simple is pscing elitr sed m nonmy eirmod simply free
-                              text.
-                            </p>
-                          </div>
-                          <div class="clearfix"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Section: Project -->
-      <section class="bg-lighter">
-        <div class="container-fluid">
-          <div class="section-title">
-            <div class="row justify-content-center">
-              <div class="col-md-8">
-                <div class="tm-sc-section-title section-title mb-50">
-                  <div class="title-wrapper text-center">
-                    <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">|</h5>
-                    <h2 class="mt-0"></h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section-content">
-
-          </div>
-        </div>
-        <div class="tm-floating-objects d-none d-xl-block">
-          <span class="floating-object-1 tm-animation-flicker" data-tm-bg-img="images/floating-objects/ob6.png"
-            data-tm-width="357" data-tm-height="337" data-tm-top="10%" data-tm-z-index="1" data-tm-right="1%"
-            data-tm-left="auto"></span>
-        </div>
-      </section>
-
-      <!-- Section: Why Choose -->
-      <section class="why-chose-us bg-lighter">
-        <div class="container">
-          <div class="section-content">
-            <div class="row">
-              <div class="col-sm-12 col-lg-7 mb-md-30 z-index-1">
-                <div class="tm-benifit">
-                  <img class="" src="images/photos/s1.jpg" alt="images" />
-                </div>
-              </div>
-              <div class="col-sm-12 col-lg-5">
-                <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Our Benefits
-                </h5>
-                <h2>Why Choose Our Lawyers?</h2>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                  alteration in some form.</p>
-                <div class="title-box">
-                  <h5 class="title mt-0"><span class="fas fa-caret-right text-theme-colored1 mr-1"></span> Against of
-                    Any Violance</h5>
-                  <p>Lorem ipsum is simply free text dolor sit amet, consectetur notted</p>
-                </div>
-                <div class="title-box">
-                  <h5 class="title mt-0"><span class="fas fa-caret-right text-theme-colored1 mr-1"></span> We Never Lose
-                    Any Case</h5>
-                  <p class="mb-0">Lorem ipsum is simply free text dolor sit amet, consectetur notted</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tm-floating-objects d-none d-xl-block">
-          <span class="floating-object-1 tm-animation-slide-horizontal" data-tm-bg-img="images/floating-objects/ob5.png"
-            data-tm-width="376" data-tm-height="341" data-tm-top="70%" data-tm-right="1%" data-tm-left="auto"></span>
-        </div>
-      </section>
-
-      <!-- Section: Blog -->
-      <section class="">
-        <div class="container">
-          <div class="section-title">
-            <div class="row justify-content-center">
-              <div class="col-md-8">
-                <div class="mb-60">
-                  <div class="tm-sc-section-title section-title">
-                    <div class="title-wrapper text-center">
-                      <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| From
-                        the Blog</h5>
-                      <h2 class="mt-0">News & Articles</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section-content">
-            <div class="row">
-              <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="tm-sc-blog tm-justos-blog mb-lg-30">
-                  <article class="post type-post">
-                    <div class="entry-header">
-                      <div class="post-thumb lightgallery-lightbox">
-                        <div class="post-thumb-inner">
-                          <div class="thumb">
-                            <img class="img-fullwidth" src="images/coming.jpg" alt="BlogImage1">
-                            <div class="date bg-theme-colored1 text-center text-white">07
-                              Apr</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="entry-content bg-transparent pt-25 pr-0 pl-0 mb-30">
-                      <div class="entry-meta mt-0 pt-0 mb-0">
-                        <span class="text-theme-colored1 font-weight-700 mb-10 mr-10">by Admin</span>
-                        <span class="text-theme-colored1 font-weight-700 mb-10">- 2 Comments</span>
-                      </div>
-                      <h4 class="entry-title mt-1 mb-20"><a href="news-details.html" rel="bookmark">How to Choose your
-                          Personal Attorney</a></h4>
-                      <p class="mb-0">Lorem ipsum is simply free text used by copytyping refreshing. Donec at ligula
-                        lacus lla dig nissimmi quis neque interdum.</p>
-                      <div class="clearfix"></div>
-                    </div>
-                    <div class="bottom-boder-line"></div>
-                  </article>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="tm-sc-blog tm-justos-blog mb-lg-30">
-                  <article class="post type-post">
-                    <div class="entry-header">
-                      <div class="post-thumb lightgallery-lightbox">
-                        <div class="post-thumb-inner">
-                          <div class="thumb">
-                            <img class="img-fullwidth" src="images/coming.jpg" alt="BlogImage2">
-                            <div class="date bg-theme-colored1 text-center text-white">07
-                              Apr</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="entry-content bg-transparent pt-25 pr-0 pl-0 mb-30">
-                      <div class="entry-meta mt-0 pt-0 mb-0">
-                        <span class="text-theme-colored1 font-weight-700 mb-10 mr-10">by Admin</span>
-                        <span class="text-theme-colored1 font-weight-700 mb-10">- 2 Comments</span>
-                      </div>
-                      <h4 class="entry-title mt-1 mb-20"><a href="news-details.html" rel="bookmark">Best Way to Choose
-                          Your Next Perfect Lawyer</a></h4>
-                      <p class="mb-0">Lorem ipsum is simply free text used by copytyping refreshing. Donec at ligula
-                        lacus lla dig nissimmi quis neque interdum.</p>
-                      <div class="clearfix"></div>
-                    </div>
-                    <div class="bottom-boder-line"></div>
-                  </article>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="tm-sc-blog tm-justos-blog">
-                  <article class="post type-post">
-                    <div class="entry-header">
-                      <div class="post-thumb lightgallery-lightbox">
-                        <div class="post-thumb-inner">
-                          <div class="thumb">
-                            <img class="img-fullwidth" src="images/coming.jpg" alt="BlogImage3">
-                            <div class="date bg-theme-colored1 text-center text-white">07
-                              Apr</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="entry-content bg-transparent pt-25 pr-0 pl-0 mb-30">
-                      <div class="entry-meta mt-0 pt-0 mb-0">
-                        <span class="text-theme-colored1 font-weight-700 mb-10 mr-10">by Admin</span>
-                        <span class="text-theme-colored1 font-weight-700 mb-10">- 2 Comments</span>
-                      </div>
-                      <h4 class="entry-title mt-1 mb-20"><a href="news-details.html" rel="bookmark">Three Ways to get
-                          your case done easily</a></h4>
-                      <p class="mb-0">Lorem ipsum is simply free text used by copytyping refreshing. Donec at ligula
-                        lacus lla dig nissimmi quis neque interdum.</p>
-                      <div class="clearfix"></div>
-                    </div>
-                    <div class="bottom-boder-line"></div>
-                  </article>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="tm-floating-objects d-none d-xl-block">
-          <span class="floating-object-1 tm-animation-floating" data-tm-z-index="-1"
-            data-tm-bg-img="images/floating-objects/ob7.png" data-tm-width="307" data-tm-height="250"
-            data-tm-top="60%"></span>
-        </div>
-        <div class="container p-0">
-          <div class="tm-widget tm-widget-subscribe widget-subscribe">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="content">
-                  <h2 class="subscribe-sub-title text-white">Subscribe for Newsletter</h2>
-                </div>
-              </div>
-              <div class="col-lg-5 offset-lg-1">
-                <form id="mailchimp-subscription-form1" class="newsletter-form">
-                  <input type="email" value="" name="EMAIL" placeholder="Email Address" class="form-control"
-                    id="mce-EMAIL">
-                  <span class="input-group-btn">
-                    <button data-tm-height="66" class="btn btn-colored btn-flat mt-10 w-100 font-weight-bold"
-                      type="submit">Subscribe Now</button>
-                  </span>
-                </form>
-              </div>
-            </div>
-            <!-- Mailchimp Subscription Form Validation-->
+              </rs-static-layers>
+              <rs-progress class="rs-bottom" style="height: 5px; background: rgba(199,199,199,0.5);"></rs-progress>
+            </rs-module>
             <script>
-              (function ($) {
-                $('#mailchimp-subscription-form1').ajaxChimp({
-                  callback: mailChimpCallBack,
-                  url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
-                });
-
-                function mailChimpCallBack(resp) {
-                  // Hide any previous response text
-                  var $mailchimpform = $('#mailchimp-subscription-form1'),
-                    $response = '';
-                  $mailchimpform.children(".alert").remove();
-                  if (resp.result === 'success') {
-                    $response =
-                      '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-                      resp.msg + '</div>';
-                  } else if (resp.result === 'error') {
-                    $response =
-                      '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-                      resp.msg + '</div>';
-                  }
-                  $mailchimpform.prepend($response);
+              if (typeof revslider_showDoubleJqueryError === "undefined") {
+                function revslider_showDoubleJqueryError(sliderID) {
+                  var err = "<div class='rs_error_message_box'>";
+                  err += "<div class='rs_error_message_oops'>Oops...</div>";
+                  err += "<div class='rs_error_message_content'>";
+                  err +=
+                    "You have some jquery.js library include that comes after the Slider Revolution files js inclusion.<br>";
+                  err +=
+                    "To fix this, you can:<br>&nbsp;&nbsp;&nbsp; 1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on";
+                  err += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jQuery.js inclusion and remove it";
+                  err += "</div>";
+                  err += "</div>";
+                  jQuery(sliderID).show().html(err);
                 }
-              })(jQuery);
+              }
             </script>
-          </div>
+          </rs-module-wrap>
+          <!-- END REVOLUTION SLIDER -->
         </div>
-      </section>
+      </div>
     </div>
-    <!-- end main-content -->
+  </section>
+  <!-- Section: home End -->
 
-    <!-- Footer -->
-    <footer id="footer" class="footer" data-tm-bg-color="#352f27">
-      <div class="footer-widget-area">
-        <div class="container p-0">
-          <div class="row justify-content-md-center">
-            <div class="col-lg-6">
-              <div class="widget text-center">
-                <img src="images/logo2.jpg" width="60" alt=""><span>
-                  <h5>KM Advocates</h5>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container pt-30 pb-20">
-          <div class="row">
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="justos_footer_social_widget">
-                <div class="widget tm-widget-contact-info contact-info-style1">
-                  <h4 class="widget-title">About</h4>
-                  <div class="description mb-25">Lorem ipsum dolor sit amet, consect etur adi pisicing elit sed do
-                    eiusmod tempor incididunt ut labore.</div>
-                  <ul class="styled-icons icon-md icon-circled icon-dark icon-hover-theme-colored1 clearfix">
-                    <li><a class="social-link" href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a class="social-link" href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a class="social-link" href="#"><i class="fab fa-youtube"></i></a></li>
-                    <li><a class="social-link" href="#"><i class="fab fa-instagram"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="border_left_right pl-50 pl-lg-0">
-                <div class="widget widget_nav_menu">
-                  <h4 class="widget-title">Practice Area</h4>
-                  <ul>
-                    <li><a href="page-practice-details.html">Family Law</a></li>
-                    <li><a href="page-practice-details.html">Business Law</a></li>
-                    <li><a href="page-practice-details.html">Real Estate Law</a></li>
-                    <li><a href="page-practice-details.html">Labour Law</a></li>
-                    <li><a href="page-practice-details.html">Criminal Law</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="border_right pr-30 pr-lg-0">
-                <div class="widget">
-                  <h4 class="widget-title">Latest News</h4>
-                  <div class="latest-posts">
-                    <article class="post clearfix pb-0 mb-25">
-                      <a class="post-thumb" href="#"><img src="images/blog/s1.jpg" alt="s1.jpg"></a>
-                      <div class="post-right">
-                        <h5 class="post-title"><a class="text-white" href="news-details.html">We’re Providing the
-                            Quality Servics</a></h5>
-                        <span class="post-date">
-                          <time class="entry-date text-theme-colored1" datetime="2020-05-15T06:10:26+00:00">April 15,
-                            2020</time>
-                        </span>
-                      </div>
-                    </article>
-                    <article class="post clearfix pb-0 mb-20">
-                      <a class="post-thumb" href="#"><img src="images/blog/s2.jpg" alt="s2.jpg"></a>
-                      <div class="post-right">
-                        <h5 class="post-title"><a class="text-white" href="news-details.html">We’re Providing the
-                            Quality Servics</a></h5>
-                        <span class="post-date">
-                          <time class="entry-date text-theme-colored1" datetime="2020-05-15T06:10:26+00:00">April 15,
-                            2020</time>
-                        </span>
-                      </div>
-                    </article>
+  <!-- Section: intro -->
+  <section>
+    <div class="container-fluid pt-0 pb-0">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-sm-6 col-lg-6 col-xl-4 p-0 pl-lg-15 pr-lg-15">
+            <div class="tm-sc-jus-feature-box mb-30">
+              <div
+                class="tm-sc-icon-box icon-box icon-left iconbox-centered-in-responsive iconbox-theme-colored1 animate-icon-on-hover animate-icon-rotate-y pd-res-40 bg-dark">
+                <div class="icon-box-wrapper">
+                  <div class="icon-wrapper"><a class="icon icon-type-font-icon icon-circled icon-dark mt-10"> <i
+                        class="flaticon-law-books"></i> </a></div>
+                  <div class="icon-text">
+                    <h5 class="aa-subtitle font-current-theme1 mt-0 mb-0 text-black-777"><span
+                        class="text-theme-colored1">|</span> Try Our Services</h5>
+                    <div class="content">
+                      <h4 class="">Experienced Criminal Advocates</h4>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="justos_footer_contact_widget">
-                <div class="widget">
-                  <h4 class="widget-title">Contact</h4>
-                  <ul class="">
-                    <li class="clearfix">
-                      <p class="mb-0">666 road, broklyn street new york 600</p>
-                    </li>
-                    <li class="clearfix">
-                      <p class="mb-0">needhelp@justos.com</p>
-                    </li>
-                    <li class="clearfix">
-                      <p class="mb-0">666 888 0000</p>
-                    </li>
-                  </ul>
+                  <div class="clearfix"></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="footer-bottom justos-footer-bottom">
-          <div class="container" data-tm-bg-color="#2c271f">
-            <div class="row justify-content-center pt-20 pb-20">
-              <div class="col-sm-8">
-                <div class="footer-paragraph text-center">
-                  © Copyright 2020 by BakpageLabs
+          <div class="col-sm-6 col-lg-6 col-xl-4 p-0 pl-lg-15 pr-lg-15">
+            <div class="tm-sc-jus-feature-box mb-30">
+              <div
+                class="tm-sc-icon-box icon-box icon-left iconbox-centered-in-responsive iconbox-theme-colored1 animate-icon-on-hover animate-icon-rotate-y pd-res-40 bg-dark">
+                <div class="icon-box-wrapper">
+                  <div class="icon-wrapper"><a class="icon icon-type-font-icon icon-circled icon-dark mt-10"> <i
+                        class="flaticon-law-judge-2"></i> </a></div>
+                  <div class="icon-text">
+                    <h5 class="aa-subtitle font-current-theme1 mt-0 mb-0 text-black-777"><span
+                        class="text-theme-colored1">|</span> Try Our Services</h5>
+                    <div class="content text-black-555">
+                      <h4 class="">Get a Best Advice from Law Experts</h4>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-6 col-xl-4 p-0 pl-lg-15 pr-lg-15">
+            <div class="tm-sc-jus-feature-box mb-30">
+              <div
+                class="tm-sc-icon-box icon-box icon-left iconbox-centered-in-responsive iconbox-theme-colored1 animate-icon-on-hover animate-icon-rotate-y pd-res-40 bg-dark">
+                <div class="icon-box-wrapper">
+                  <div class="icon-wrapper"><a class="icon icon-type-font-icon icon-circled icon-dark mt-10"> <i
+                        class="flaticon-law-libra"></i> </a></div>
+                  <div class="icon-text">
+                    <h5 class="aa-subtitle font-current-theme1 mt-0 mb-0 text-black-777"><span
+                        class="text-theme-colored1">|</span> Try Our Services</h5>
+                    <div class="content">
+                      <h4 class="">We Protect Justice & Fight Injustice</h4>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
-  </div>
-  <!-- end wrapper -->
+    </div>
+  </section>
+  <!-- Section: Our Service -->
+  <section class="our-service" data-tm-bg-img="images/bg/b4.jpg">
+    <div class="container pb-lg-20">
+      <div class="section-title">
+        <div class="row justify-content-md-center">
+          <div class="col-md-8">
+            <div class="text-center mb-100">
+              <div class="tm-sc-section-title section-title">
+                <div class="title-wrapper">
+                  <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Our
+                    Expertise</h5>
+                  <h2 class="text-white">Practice Areas</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-content">
+        {% if services %}
+        <div class="row">
+          {% for service in services %}
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="tm-icon-service-box">
+              <div class="tm-details">
+                <div class="icon"><i class="flaticon-law-courthouse text-white"></i></div>
+                <h4 class="title"><a href="{{ service.get_absolute_url }}">{{service.name}}</a></h4>
+                <p>{{ service.body_summary|striptags }}</p>
+                <a class="text-hover-theme-colored1" href="{{ service.get_absolute_url }}"><span
+                    class="fas fa-arrow-right"></span></a>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  <!-- Section: About -->
+  <section class="">
+    <div class="container">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-sm-12 col-lg-6 mb-md-30">
+            <img src="{% static 'images/LOGO.png' %}" alt="images">
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Get to Know
+              Us</h5>
+            <h2>Welcome to KM Advocates LLP </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua lonm andhn. Aenean tincidunt id mauris id auctor. Donec at ligula lacus.
+              Nulla dignissim mi quis neque interdum.</p>
+            <p class="title-call font-size-20">Call Us Anytime <br class="d-block d-sm-none"><a
+                class="text-theme-colored1 font-size-30" href="tel:666-888-0000"><b>666-888-0000</b></a></p>
+            <a href="{% url 'website:about' %}" target="_self"
+              class="btn btn-theme-colored1 btn-round btn-lg text-white">Learn
+              More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tm-floating-objects d-none d-xl-block">
+      <span class="floating-object-1 tm-animation-floating" data-tm-z-index="-1"
+        data-tm-bg-img="{% static 'images/floating-objects/ob1.png' %}" data-tm-width="307" data-tm-height="250"
+        data-tm-top="60%"></span>
+      <span class="floating-object-2 tm-animation-flicker" data-tm-z-index="-1"
+        data-tm-bg-img="{% static 'images/floating-objects/ob2.png' %}" data-tm-width="680" data-tm-height="630"
+        data-tm-top="10%" data-tm-right="10%"></span>
+    </div>
+  </section>
 
-  <!-- Footer Scripts -->
-  <!-- JS | Custom script for all pages -->
-  <script src="js/custom.js"></script>
+  <!-- Section: Client & Partner -->
+  <section class="clients-section bg-theme-colored1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
 
-</body>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Divider -->
+  <!-- Section: Case Status -->
+  <section class="bg-img-cover" data-tm-bg-img="{% static 'images/bg/b3.jpg' %}">
+    <div class="container">
+      <div class="section-title">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="mb-60">
+              <div class="tm-sc-section-title section-title">
+                <div class="title-wrapper">
+                  <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Case
+                    Solved
+                  </h5>
+                  <h2 class="text-white mt-0">Why You Need The Top Lawyers</h2>
+                  <div class="tm-case-solved mt-30 mb-50">
+                    <div class="tm-sc-unordered-list list-default">
+                      <ul>
+                        <li>The Best Lawyer Firm in Your City</li>
+                        <li>100 Years Family History</li>
+                        <li>Excellent Operational Model</li>
+                        <li>Skilled Attorneys with Experienced</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a href="page-about.html" target="_self" class="btn btn-theme-colored1 btn-lg btn-round">Learn
+                    More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="tm-case-solved mb-60">
+                  <div class="thumb">
+                    <img class="img" src="{% static 'images/coming.jpg' %}" width="300" height="100" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="tm-case-solved border_right2">
+                  <div
+                    class="tm-sc-icon-box icon-box icon-left text-left iconbox-centered-in-responsive animate-icon-on-hover animate-icon-rotate-y mb-sm-30">
+                    <div class="icon-box-wrapper">
+                      <div class="icon-wrapper"> <a class="icon icon-default text-theme-colored1"> <i
+                            class="fas fa-balance-scale font-size-64"></i> </a></div>
+                      <div class="icon-text">
+                        <h5 class="icon-box-title text-white">Serving 20 Years</h5>
+                      </div>
+                      <div class="content mt-10 pr-30">
+                        <p>Lorem ipsum dolor sit a consetetur simple is pscing elitr sed m nonmy eirmod simply free
+                          text.
+                        </p>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="tm-case-solved">
+                  <div
+                    class="tm-sc-icon-box icon-box icon-left text-left iconbox-centered-in-responsive animate-icon-on-hover animate-icon-rotate-y mb-sm-30">
+                    <div class="icon-box-wrapper">
+                      <div class="icon-wrapper"> <a class="icon icon-default text-theme-colored1"> <i
+                            class="fas fa-university font-size-64"></i> </a></div>
+                      <div class="icon-text">
+                        <h5 class="icon-box-title text-white">The Largest Law Firm</h5>
+                      </div>
+                      <div class="content mt-10 pr-30">
+                        <p>Lorem ipsum dolor sit a consetetur simple is pscing elitr sed m nonmy eirmod simply free
+                          text.
+                        </p>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Project -->
+  <section class="bg-lighter">
+    <div class="container-fluid">
+      <div class="section-title">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="tm-sc-section-title section-title mb-50">
+              <div class="title-wrapper text-center">
+                <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">|</h5>
+                <h2 class="mt-0"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-content">
 
-</html>
+      </div>
+    </div>
+    <div class="tm-floating-objects d-none d-xl-block">
+      <span class="floating-object-1 tm-animation-flicker"
+        data-tm-bg-img="{% static 'images/floating-objects/ob6.png' %}" data-tm-width="357" data-tm-height="337"
+        data-tm-top="10%" data-tm-z-index="1" data-tm-right="1%" data-tm-left="auto"></span>
+    </div>
+  </section>
+
+  <!-- Section: Why Choose -->
+  <section class="why-chose-us bg-lighter">
+    <div class="container">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-sm-12 col-lg-7 mb-md-30 z-index-1">
+            <div class="tm-benifit">
+              <img class="" src="{% static 'images/photos/s1.jpg' %}" alt="images" />
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-5">
+            <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Our Benefits
+            </h5>
+            <h2>Why Choose Our Lawyers?</h2>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+              alteration in some form.</p>
+            <div class="title-box">
+              <h5 class="title mt-0"><span class="fas fa-caret-right text-theme-colored1 mr-1"></span> Against of
+                Any Violance</h5>
+              <p>Lorem ipsum is simply free text dolor sit amet, consectetur notted</p>
+            </div>
+            <div class="title-box">
+              <h5 class="title mt-0"><span class="fas fa-caret-right text-theme-colored1 mr-1"></span> We Never Lose
+                Any Case</h5>
+              <p class="mb-0">Lorem ipsum is simply free text dolor sit amet, consectetur notted</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tm-floating-objects d-none d-xl-block">
+      <span class="floating-object-1 tm-animation-slide-horizontal"
+        data-tm-bg-img="{% static 'images/floating-objects/ob5.png' %}" data-tm-width="376" data-tm-height="341"
+        data-tm-top="70%" data-tm-right="1%" data-tm-left="auto"></span>
+    </div>
+  </section>
+
+  <!-- Section: Blog -->
+  <section class="">
+    <div class="container">
+      <div class="section-title">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="mb-60">
+              <div class="tm-sc-section-title section-title">
+                <div class="title-wrapper text-center">
+                  <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| From
+                    the Blog</h5>
+                  <h2 class="mt-0">News & Articles</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-content">
+        <div class="row">
+          {% for blog in blogs %}<div class="owl-carousel owl-theme tm-owl-carousel-4col" data-nav="true"
+            data-dots="true" data-autoplay="true" data-loop="true" data-duration="6000" data-smartspeed="300"
+            data-margin="30" data-stagepadding="0">
+            <div class="item">
+
+              <div class="tm-sc-blog tm-justos-blog mb-lg-30">
+                <article class="post type-post">
+                  <div class="entry-header">
+                    <div class="post-thumb lightgallery-lightbox">
+                      <div class="post-thumb-inner">
+                        <div class="thumb"><a href="{{blog.get_absolute_url}}">
+                            <img class="img-fullwidth" src="{{blog.image.url}}" alt="{{blog.title}}"></a>
+                          <div class="date bg-theme-colored1 text-center text-white">{{blog.created_at|naturalday}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="entry-content bg-transparent pt-25 pr-0 pl-0 mb-30">
+                    <div class="entry-meta mt-0 pt-0 mb-0">
+                      <span class="text-theme-colored1 font-weight-700 mb-10 mr-10">{{blog.author}}</span>
+                      <span class="text-theme-colored1 font-weight-700 mb-10">{{blog.created_at|naturaltime}}</span>
+                    </div>
+                    <h4 class="entry-title mt-1 mb-20"><a href="{{blog.get_absolute_url}}"
+                        rel="bookmark">{{blog.title}}</a></h4>
+                    <p class="mb-0">
+                      {{ blog.body_summary|striptags }}
+                    </p>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="bottom-boder-line"></div>
+                </article>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+
+    </div>
+    <div class="tm-floating-objects d-none d-xl-block">
+      <span class="floating-object-1 tm-animation-floating" data-tm-z-index="-1"
+        data-tm-bg-img="images/floating-objects/ob7.png" data-tm-width="307" data-tm-height="250"
+        data-tm-top="60%"></span>
+    </div>
+    <div class="container p-0">
+      <div class="tm-widget tm-widget-subscribe widget-subscribe">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="content">
+              <h2 class="subscribe-sub-title text-white">Subscribe for Newsletter</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 offset-lg-1">
+            <form id="mailchimp-subscription-form1" class="newsletter-form">
+              <input type="email" value="" name="EMAIL" placeholder="Email Address" class="form-control" id="mce-EMAIL">
+              <span class="input-group-btn">
+                <button data-tm-height="66" class="btn btn-colored btn-flat mt-10 w-100 font-weight-bold"
+                  type="submit">Subscribe Now</button>
+              </span>
+            </form>
+          </div>
+        </div>
+        <!-- Mailchimp Subscription Form Validation-->
+        <script>
+          (function ($) {
+            $('#mailchimp-subscription-form1').ajaxChimp({
+              callback: mailChimpCallBack,
+              url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
+            });
+
+            function mailChimpCallBack(resp) {
+              // Hide any previous response text
+              var $mailchimpform = $('#mailchimp-subscription-form1'),
+                $response = '';
+              $mailchimpform.children(".alert").remove();
+              if (resp.result === 'success') {
+                $response =
+                  '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                  resp.msg + '</div>';
+              } else if (resp.result === 'error') {
+                $response =
+                  '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                  resp.msg + '</div>';
+              }
+              $mailchimpform.prepend($response);
+            }
+          })(jQuery);
+        </script>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end main-content -->
+{% endblock content %}

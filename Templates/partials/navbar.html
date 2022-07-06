@@ -1,0 +1,108 @@
+{% load static%}
+<!-- Header -->
+<header id="header" class="header header-layout-type-header-2rows">
+  <div class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-auto header-top-left align-self-center text-center text-xl-start">
+          <ul class="element contact-info">
+            <li class="contact-phone text-white"><i class="fa fa-phone font-icon sm-display-block"></i> Tel:
+              +2547-000-0000</li>
+            <li class="contact-email text-white"><i class="fa fa-envelope font-icon sm-display-block"></i>
+              info@example.com</li>
+            <li class="contact-address text-white"><i class="fa fa-map font-icon sm-display-block"></i> 121
+              Street, City</li>
+          </ul>
+        </div>
+        <div class="col-xl-auto ms-xl-auto header-top-right align-self-center text-center text-xl-end">
+          <div class="element pt-0 pb-0">
+            <ul class="styled-icons icon-dark icon-theme-colored1 icon-circled clearfix">
+              <li><a class="social-link" href="#"><i class="fab fa-facebook text-white"></i></a></li>
+              <li><a class="social-link" href="#"><i class="fab fa-twitter text-white"></i></a></li>
+              <li><a class="social-link" href="#"><i class="fab fa-youtube text-white"></i></a></li>
+            </ul>
+          </div>
+          <div class="element pt-0 pt-lg-10 pb-0">
+            <a href="/admin/" class="btn btn-theme-colored2 btn-sm">
+              Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-nav tm-enable-navbar-hide-on-scroll">
+    <div class="header-nav-wrapper navbar-scrolltofixed">
+      <div class="menuzord-container header-nav-container">
+        <div class="container position-relative">
+          <div class="row header-nav-col-row">
+            <div class="col-sm-auto align-self-center">
+              <a class="menuzord-brand site-brand" href="{% url 'website:home' %}">
+                <img class="logo-default logo-1x" src="{% static 'images/LOGO.png' %}" alt="Logo">
+                <img class="logo-default logo-2x retina" src="{% static 'images/LOGO.png' %}" alt="Logo">
+              </a>
+            </div>
+            <div class="col-sm-auto ms-auto pr-0 align-self-center">
+              <nav id="top-primary-nav" class="menuzord theme-color2" data-effect="slide" data-animation="none"
+                data-align="right">
+                <ul id="main-nav" class="menuzord-menu">
+                  <li {% if request.resolver_match.url_name == 'home' %}class="active" {% endif %} class="menu-item">
+                    <a href="{% url 'website:home'%}">Home</a>
+                  </li>
+                  <li {% if request.resolver_match.url_name == 'about' %}class="active" {% endif %} class=" menu-item">
+                    <a href="{% url 'website:about'%}">About</a>
+                  </li>
+                  <li {% if request.resolver_match.url_name == 'services' %}class="active" {% endif %}
+                    class="menu-item">
+                    <a href="{% url 'website:services'%}">Practice Areas</a>
+                  </li>
+                  <!-- <li class="menu-item"><a href="#">Resources</a>
+                    <ul class="dropdown">
+                    </ul>
+                  </li> -->
+                  <li {% if request.resolver_match.url_name == 'blog' %}class="active" {% endif %} class="menu-item">
+                    <a href="{% url 'website:blog'%}">News</a>
+                  </li>
+                  <li {% if request.resolver_match.url_name == 'contact' %}class="active" {% endif %} class="menu-item">
+                    <a href="{% url 'website:contact'%}">Contact</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-sm-auto align-self-center nav-side-icon-parent">
+              <ul class="list-inline nav-side-icon-list">
+                <li class="hidden-mobile-mode"><a href="#" id="top-nav-search-btn"><i
+                      class="search-icon fa fa-search"></i></a></li>
+
+                <li class="hidden-mobile-mode">
+                  <div id="side-panel-trigger" class="side-panel-trigger">
+                    <a href="#">
+                      <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <div id="top-nav-search-form" class="clearfix">
+                <form action="#" method="GET">
+                  <input type="text" name="s" value="" placeholder="Type and Press Enter..." autocomplete="off" />
+                </form>
+                <a href="#" id="close-search-btn"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="row d-block d-xl-none">
+            <div class="col-12">
+              <nav id="top-primary-nav-clone"
+                class="menuzord d-block d-xl-none default menuzord-color-default menuzord-border-boxed menuzord-responsive"
+                data-effect="slide" data-animation="none" data-align="right">
+                <ul id="main-nav-clone" class="menuzord-menu menuzord-right menuzord-indented scrollable">
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

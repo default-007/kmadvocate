@@ -1,0 +1,78 @@
+{% load static %}
+<!-- Footer -->
+<footer id="footer" class="footer" data-tm-bg-color="#352f27">
+  <div class="footer-widget-area">
+    <div class="container p-0" data-tm-bg-color="#2c271f">
+      <div class="row justify-content-md-center">
+        <div class="col-lg-6">
+          <div class="widget text-center">
+            <img src="{% static 'images/LOGO.png' %}" width="250" alt=""><span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container pt-30 pb-20">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-xl-4">
+          <div class="justos_footer_social_widget">
+            <div class="widget tm-widget-contact-info contact-info-style1">
+              <h4 class="widget-title">About</h4>
+              <div class="description mb-25">Lorem ipsum dolor sit amet, consect etur adi pisicing elit sed do
+                eiusmod tempor incididunt ut labore.</div>
+              <ul class="styled-icons icon-md icon-circled icon-dark icon-hover-theme-colored1 clearfix">
+                <li><a class="social-link" href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a class="social-link" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="social-link" href="#"><i class="fab fa-youtube"></i></a></li>
+                <li><a class="social-link" href="#"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 col-xl-4">
+          <div class="border_left_right pl-50 pl-lg-0">
+            <div class="widget widget_nav_menu">
+              <h4 class="widget-title">Practice Area</h4>
+              {% for service in services %}
+              <ul>
+                <li><a href="{{service.get_absolute_url}}">{{service.name}}</a></li>
+
+              </ul>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 col-xl-4">
+          <div class="justos_footer_contact_widget">
+            <div class="widget">
+              <h4 class="widget-title">Contact</h4>
+              <ul class="">
+                <li class="clearfix">
+                  <p class="mb-0"> Street, City </p>
+                </li>
+                <li class="clearfix">
+                  <p class="mb-0">needhelp@kmadvocates.com</p>
+                </li>
+                <li class="clearfix">
+                  <p class="mb-0">666 888 0000</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom justos-footer-bottom">
+      <div class="container" data-tm-bg-color="#2c271f">
+        <div class="row justify-content-center pt-20 pb-20">
+          <div class="col-sm-8">
+            <div class="footer-paragraph text-center">
+              © Copyright 2020 by KM Adocates LLP
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

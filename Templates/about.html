@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Start main-content -->
+<div class="main-content-area">
+  <!-- Section: inner-header Start -->
+  <section class="page-title divider layer-overlay overlay-theme-colored2-9 section-typo-light bg-img-center"
+    data-tm-bg-img="{% static 'images/bg/bg1.jpg' %}">
+    <div class="container pt-90 pb-90">
+      <!-- Section Content -->
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="title text-white">About Us</h2>
+            <nav role="navigation" class="breadcrumb-trail breadcrumbs">
+              <div class="breadcrumbs">
+                <span class="trail-item trail-begin">
+                  <a href="{% url 'website:home' %}"><span>Home</span></a>
+                </span>
+
+                <span><i class="fa fa-angle-right"></i></span>
+                <span class="trail-item trail-end text-theme-colored1">About Us</span>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: inner-header End -->
+
+  <!-- Section: About -->
+  <section class="">
+    <div class="container">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-sm-12 col-lg-6 mb-md-30">
+            <img src="{% static 'images/LOGO.png' %}" alt="images">
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Get to Know Us
+            </h5>
+            <h2>Welcome to Justos Law Attorney Firm</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua lonm andhn. Aenean tincidunt id mauris id auctor. Donec at ligula lacus.
+              Nulla dignissim mi quis neque interdum.</p>
+            <p class="title-call font-size-20">Call Us Anytime <br class="d-block d-sm-none"><a
+                class="text-theme-colored1 font-size-30" href="tel:666-888-0000"><b>666-888-0000</b></a></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tm-floating-objects d-none d-xl-block">
+      <span class="floating-object-1 tm-animation-floating" data-tm-z-index="-1"
+        data-tm-bg-img="images/floating-objects/ob1.png" data-tm-width="307" data-tm-height="250"
+        data-tm-top="60%"></span>
+      <span class="floating-object-2 tm-animation-flicker" data-tm-z-index="-1"
+        data-tm-bg-img="images/floating-objects/ob2.png" data-tm-width="680" data-tm-height="630" data-tm-top="10%"
+        data-tm-right="10%"></span>
+    </div>
+  </section>
+  <!-- End Divider -->
+
+  <!-- Section: Team -->
+  <section class="" data-tm-bg-img="{% static 'images/parttern/p14.png' %}">
+    <div class="container pb-70">
+      <div class="section-title">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="mb-60">
+              <div class="tm-sc-section-title section-title">
+                <div class="title-wrapper text-center">
+                  <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Expert
+                    Team Members</h5>
+                  <h2 class="mt-0">Meet Our Lawyers</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-content">
+        <div class="container">
+          <div class="section-content">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="owl-carousel owl-theme tm-owl-carousel-4col" data-nav="true" data-dots="true"
+                  data-autoplay="true" data-loop="true" data-duration="6000" data-smartspeed="300" data-margin="30"
+                  data-stagepadding="0">
+                  {% for object in team %}
+                  <div class="item">
+                    <div class="tm-sc-staff tm-sc-staff-grid staff-style5-current-theme tm_justos_team mb-30">
+                      <div class="tm-staff staff-items type-staff-items">
+                        <div class="staff-inner">
+                          <div class="staff-header">
+                            <div class="thumb"> <img src="{{object.imageURL}}" class="img-fullwidth wp-post-image"
+                                alt="">
+                            </div>
+                            <div class="social-wrapper">
+                              <ul class="styled-icons icon-md text-center">
+                                <li><a class="styled-icons-item text-white" target="_blank"
+                                    href="{{object.facebook_url}}"><i class="fab fa-facebook"></i></a></li>
+                                <li><a class="styled-icons-item text-white" target="_blank"
+                                    href="{{object.twitter_url}}"><i class="fab fa-twitter"></i></a></li>
+                                <li><a class="styled-icons-item text-white" target="_blank"
+                                    href="{{object.instagram_url}}"><i class="fab fa-instagram"></i></a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="staff-content pb-0">
+                            <h4 class="name"><a href="{{object.get_absolute_url}}">{{object.names}}</a></h4>
+                            <div class="speciality mb-0">{{object.position}}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Testimonials 
+  <section class="our-testimonials">
+    <div class="container style2">
+      <div class="section-title">
+        <div class="row justify-content-md-center">
+          <div class="col-md-8">
+            <div class="text-center mb-60">
+              <div class="tm-sc-section-title section-title">
+                <div class="title-wrapper">
+                  <h5 class="aa-subtitle text-theme-colored1 font-current-theme1 mt-0 mb-0 font-weight-400">| Client
+                    Testimonials</h5>
+                  <h2 class="mt-0">What They Are Saying</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-content">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="testimonial-item tm_justos mb-30">
+              <div class="author-text"> I was very impresed by the kologi service lorem ipsum is simply free text used
+                by copytyping refreshing. Neque porro est qui dolorem ipsum quia.</div>
+              <div class="author-info clearfix">
+                <h4 class="name">Mike Hardsone</h4>
+                <span class="job-position text-theme-colored1">Client Feedback</span>
+              </div>
+              <div class="author-thumb">
+                <img class="rounded-circle" src="images/testimonials/s1.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="testimonial-item tm_justos mb-30">
+              <div class="author-text"> I was very impresed by the kologi service lorem ipsum is simply free text used
+                by copytyping refreshing. Neque porro est qui dolorem ipsum quia.</div>
+              <div class="author-info clearfix">
+                <h4 class="name">Selina Doe</h4>
+                <span class="job-position text-theme-colored1">Client Feedback</span>
+              </div>
+              <div class="author-thumb">
+                <img class="rounded-circle" src="images/testimonials/s2.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="testimonial-item tm_justos mb-30">
+              <div class="author-text">I was very impresed by the kologi service lorem ipsum is simply free text used by
+                copytyping refreshing. Neque porro est qui dolorem ipsum quia.</div>
+              <div class="author-info clearfix">
+                <h4 class="name">Kevin Martin</h4>
+                <span class="job-position text-theme-colored1">Client Feedback</span>
+              </div>
+              <div class="author-thumb">
+                <img class="rounded-circle" src="images/testimonials/s3.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+  <!-- End Divider -->
+
+  <!-- Section: Client & Partner -->
+  <section class="clients-section bg-theme-colored1">
+    <div class="container">
+      <div class="row">
+
+      </div>
+    </div>
+  </section>
+  <!-- End Divider -->
+
+</div>
+{% endblock content %}

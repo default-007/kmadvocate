@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Start main-content -->
+<div class="main-content-area">
+  <!-- Section: page title -->
+  <section class="page-title layer-overlay overlay-dark-9 section-typo-light bg-img-center"
+    data-tm-bg-img="{% static 'images/bg/bg1.jpg' %}">
+    <div class="container pt-50 pb-50">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="title">Service Details</h2>
+            <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumbs">
+              <div class="breadcrumbs">
+                <span class="trail-item trail-begin"><a href="{% url 'website:home' %}" rel="home">Home</a></span>
+                <span><i class="fa fa-angle-right"></i></span>
+                <span class="trail-item"><a href="{% url 'website:services' %}">Practice Areas</a></span>
+                <span><i class="fa fa-angle-right"></i></span>
+                <span class="trail-item trail-end text-theme-colored1">{{object.name}}</span>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Service details -->
+  <section>
+    <div class="container pb-70">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="sidebar">
+              <div class="tm-sidebar-nav-menu-style2">
+                <div class="widget widget_nav_menu">
+                  <ul>
+                    {% for object in service_list %}
+                    <li><a href="{{object.get_absolute_url}}">{{object.name}}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+              <div class="widget widget_text text-center">
+                <div class="textwidget">
+                  <div class="section-typo-light bg-theme-colored1 mb-md-40 p-30 pt-40 pb-40"> <img
+                      class="size-full wp-image-800 aligncenter" src="{% static 'images/headphone-128.png' %}"
+                      alt="intreon" />
+                    <h4>Online Help!</h4>
+                    <h5>+(254) 700-000-000</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="widget widget-brochure-box clearfix">
+                <a class="brochure-box brochure-box-theme-colored1" href="#">
+                  <i class="far fa-file-word brochure-icon"></i>
+                  <h5 class="text">Download PDF</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <img alt="images" src="{{service.imageURL}}" />
+            <h3 class="mt-20 mb-10">{{object.name}}</h3>
+
+            <section>{{object.formatted_markdown|safe }}</section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- end main-content -->
+{% endblock %}
