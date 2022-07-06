@@ -7,5 +7,4 @@ register = template.Library()
 @register.inclusion_tag("partials/footer.html")
 def practice(self):
     services = Service.objects.first()
-
     return {"services": services}
